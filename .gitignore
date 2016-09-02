@@ -1,2 +1,3 @@
-config/key.ini
+key.ini
 composer.lock
+.DS_Store
