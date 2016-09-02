@@ -10,8 +10,21 @@
  */
 
 
+add_action( 'admin_menu', 'tei_newsletter_admin_menu' );
 
+function tei_newsletter_admin_menu() {
+    add_menu_page( 'TEI Newsletter Generator', 'TEI Newsletter', 'manage_options', 'tei-newsletter-admin.php', 'tei_newsletter_admin_page', 'dashicons-email', 6  );
+}
 
+function tei_newsletter_admin_page() {
+    if (isset($_POST['awesome_text'])) {
+        update_option('awesome_text', $_POST['awesome_text']);
+        $value = $_POST['awesome_text'];
+    } 
+
+    $value = get_option('awesome_text', 'hey-ho');
+    include 'admin/tei-newsletter-admin.php';
+}
 
 /*Get API KEY */
 $api_key = parse_ini_file(dirname(__FILE__) . '/config/key.ini');
@@ -34,10 +47,20 @@ $template = ob_get_clean();
 
 function update_template(){
     global $api_key;
-    echo $api_key;
+    // echo $api_key;
 
 }
 
+function my_awesome_page_display() {
+    if (isset($_POST['awesome_text'])) {
+        update_option('awesome_text', $_POST['awesome_text']);
+        $value = $_POST['awesome_text'];
+    } 
+
+    $value = get_option('awesome_text', 'hey-ho');
+
+    include 'form-file.php';
+}
 
 
 
