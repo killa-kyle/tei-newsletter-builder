@@ -422,6 +422,11 @@ position: relative;
             </tbody>
         </table>
 
+
+        <!-- ////////////////////////////////////////////////////
+            ARTCILE LOOP
+        //////////////////////////////////////////////////// -->
+        
         <!-- BEGIN ARTICLE -->
         <div class="article" mc:repeatable>
             <table class="email-article" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse">
